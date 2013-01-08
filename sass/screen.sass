@@ -1,0 +1,56 @@
+// ---------------------------------------------------------------------------
+// Imports
+@import base
+
+body
+  font-family: arial
+  background: #f7f7f7
+  padding: 1em 0
+  // +transition-property(font-size)
+  // +transition-duration(.5s)
+
+.grid
+  +container
+
+  li
+    padding-top: 1em
+    padding-bottom: 1em
+    
+    +transition-property(all)
+    +transition-duration(5s)
+
+    & > div
+      background: #eee
+      color: #333
+      font-weight: bold
+      padding: 4em 2em
+      text-align: center
+      border: 1px solid darken(#eee, 25%)
+      +border-radius(4px)
+      +box-shadow(0 0 3px rgba(#000, .4), inset 0 1px 0 rgba(#fff, .8))
+
+    &.title > div
+      padding: 1em
+
+    a
+      color: #333
+      text-decoration: none
+
+    +at-breakpoint(600px 12)
+      +span-columns(6,12)
+      +nth-omega(2n)
+      font-size: 18px
+      background: red
+
+      &.title > div
+        padding: 4em 2em
+
+    +at-breakpoint(900px 12)
+      +span-columns(3,12)
+      +remove-nth-omega(2n)
+      +nth-omega(4n)
+      font-size: 25px
+      background: green
+
+      &.title > div
+        padding: 4em 2em
